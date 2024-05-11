@@ -3,13 +3,15 @@ data class CircleItem(
     var radius: Double,
     override var mass: Double,
     override var velocity: CartesianVector,
-    override var x: Double,
-    override var y: Double
+    override var position: CartesianVector,
+    override var acceleration: CartesianVector,
+    override var force: CartesianVector
 ): Item(
     name = name,
     distance = radius,
     velocity = velocity,
     mass = mass,
-    x = x,
-    y = y
+    position = position,
+    acceleration = acceleration,
+    force = force
 )
