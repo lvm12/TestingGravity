@@ -12,7 +12,6 @@ data class CartesianVector(
             direction = angle
         )
     }
-
     override fun toString(): String {
         return "($x, $y)"
     }
@@ -67,12 +66,10 @@ data class CartesianVector(
     }
 }
 
-fun List<CartesianVector>.sumOf(): CartesianVector{
-    return CartesianVector(
-        x = sumOf { it.x },
-        y = sumOf { it.y }
-    )
-}
+fun List<CartesianVector>.sumOf(): CartesianVector = CartesianVector(
+    x = sumOf { it.x },
+    y = sumOf { it.y }
+)
 
 data class PolarVector(
     val magnitude: Double,

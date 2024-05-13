@@ -40,13 +40,20 @@ fun main(){
                 acceleration = CartesianVector(0.0,0.0),
                 force = CartesianVector(0.0,0.0),
             )
-        )
+        ),
+        deltaT = 0.5
     )
-    val num = readln()
-    if (num == "0") while (true){
-        readln()
-        world.next()
-    }else if (num == "1"){
-        world.repeat(2500)
-    }else world.start()
+//    val num = readln()
+//    if (num == "0") while (true){
+//        readln()
+//        world.next()
+//    }else if (num == "1"){
+//        world.repeat(2500)
+//    }else world.start()
+
+    world.repeatUntil { central, satellite ->
+        central.position.x  > satellite.position.x
+    }
+    //Produces result of 96130 seconds, or 1.1 days at 10.0 seconds interval
+    //Produces result of 96136.0 at 0.5 seconds intervals
 }
