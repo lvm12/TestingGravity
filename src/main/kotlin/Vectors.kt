@@ -58,12 +58,12 @@ data class CartesianVector(
         return x.pow(2) + y.pow(2)
     }
     fun norm(): CartesianVector{
-        val magnitude = magnitude()
-        return CartesianVector(
-            x = x/magnitude,
-            y = y/magnitude
-        )
+        return this/magnitude()
     }
+}
+
+operator fun Double.times(n: CartesianVector): CartesianVector{
+    return n*this
 }
 
 fun List<CartesianVector>.sumOf(): CartesianVector = CartesianVector(
